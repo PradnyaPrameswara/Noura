@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -15,12 +16,14 @@ export function MobileNav() {
   return (
     <div className="md:hidden">
       {/* Hamburger Trigger Button */}
-      <button
+      <Button
         type="button"
+        variant="ghost"
+        size="icon"
         onClick={toggleMenu}
         aria-label="Toggle navigation menu"
         aria-expanded={isOpen}
-        className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-black/10 bg-white/80 p-2 backdrop-blur-sm"
+        className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-black/10 bg-white/80 p-2 backdrop-blur-sm hover:bg-white"
       >
         <span
           className={`h-0.5 w-5 bg-black transition-all duration-300 ${
@@ -32,7 +35,7 @@ export function MobileNav() {
             isOpen ? "-translate-y-0 -rotate-45" : ""
           }`}
         />
-      </button>
+      </Button>
 
       {/* Mobile Drawer Overlay */}
       <div
@@ -80,7 +83,8 @@ export function MobileNav() {
           </a>
         </nav>
 
-        <div className="pt-8 border-t border-black/10">
+        <div className="pt-8">
+          <Separator className="mb-8" />
           <Button href="/contact" variant="dark" className="w-full justify-center">
             Start a project
           </Button>

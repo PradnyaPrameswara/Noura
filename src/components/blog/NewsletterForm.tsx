@@ -1,5 +1,8 @@
 import * as React from "react";
 import { ArrowRight } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export function NewsletterForm() {
   const [status, setStatus] = React.useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -32,7 +35,7 @@ export function NewsletterForm() {
   }
 
   return (
-    <div className="rounded-3xl border border-black/10 bg-white/50 p-8 sm:p-12 backdrop-blur-sm">
+    <Card className="p-8 sm:p-12">
       <div className="max-w-md mx-auto text-center">
         <span className="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-4 inline-block">
           Subscribe to newsletter
@@ -42,7 +45,7 @@ export function NewsletterForm() {
         </h3>
 
         <form onSubmit={handleSubmit} className="relative flex items-center">
-          <input
+          <Input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -51,20 +54,23 @@ export function NewsletterForm() {
             disabled={status === "submitting"}
             className="w-full h-14 rounded-full border border-black/15 bg-white/90 pl-6 pr-16 text-sm text-black placeholder:text-neutral-400 backdrop-blur-sm transition-all focus:border-black focus:outline-none focus:ring-1 focus:ring-black disabled:opacity-50"
           />
-          <button
+
+          <Button
             type="submit"
+            variant="ghost"
+            size="icon"
             disabled={status === "submitting"}
             aria-label="Subscribe"
-            className="group absolute right-2 flex h-10 w-10 items-center justify-center rounded-full bg-black text-white transition-transform hover:scale-105 disabled:opacity-50"
+            className="group absolute right-2 flex h-10 w-10 items-center justify-center rounded-full bg-black text-white hover:bg-neutral-800 transition-transform hover:scale-105 disabled:opacity-50"
           >
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </button>
+          </Button>
         </form>
 
         {status === "error" && (
           <p className="mt-3 text-xs text-red-600">Oops! Something went wrong while submitting.</p>
         )}
       </div>
-    </div>
+    </Card>
   );
 }

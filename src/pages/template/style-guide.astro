@@ -3,6 +3,10 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
+import { Accordion } from '@/components/ui/accordion';
 
 const headings = [
   { tag: 'h1', class: 'text-6xl font-medium', sample: 'Heading 1' },
@@ -85,6 +89,82 @@ const colors = [
         <Badge variant="dark">Dark Pill</Badge>
         <Badge variant="muted">Muted Tag</Badge>
         <Badge variant="label">Label Tag</Badge>
+      </div>
+    </section>
+
+    {/* Form Inputs & Textarea */}
+    <section class="mb-20">
+      <h2 class="text-2xl font-medium tracking-tight text-black mb-8">Form Controls</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 rounded-3xl border border-black/10 bg-white/60 p-8 backdrop-blur-sm">
+        <div class="space-y-4">
+          <label class="text-xs font-mono uppercase tracking-wider text-neutral-500">Text Input</label>
+          <Input placeholder="Enter your name..." />
+        </div>
+        <div class="space-y-4">
+          <label class="text-xs font-mono uppercase tracking-wider text-neutral-500">Textarea</label>
+          <Textarea placeholder="Enter your message..." rows={3} />
+        </div>
+      </div>
+    </section>
+
+    {/* Card Primitive */}
+    <section class="mb-20">
+      <h2 class="text-2xl font-medium tracking-tight text-black mb-8">Card Component</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <Card className="p-6">
+          <CardHeader className="p-0 mb-4">
+            <CardTitle>Design Strategy</CardTitle>
+            <CardDescription>Comprehensive market positioning</CardDescription>
+          </CardHeader>
+          <CardContent className="p-0">
+            <p class="text-sm text-neutral-600">
+              Structuring high-impact digital experiences with measurable conversions.
+            </p>
+          </CardContent>
+        </Card>
+        <Card className="p-6">
+          <CardHeader className="p-0 mb-4">
+            <CardTitle>Creative Direction</CardTitle>
+            <CardDescription>Distinctive visual identity</CardDescription>
+          </CardHeader>
+          <CardContent className="p-0">
+            <p class="text-sm text-neutral-600">
+              Transforming brand narratives into memorable visual statements.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+
+    {/* Separator Primitive */}
+    <section class="mb-20">
+      <h2 class="text-2xl font-medium tracking-tight text-black mb-8">Separator</h2>
+      <div class="rounded-3xl border border-black/10 bg-white/60 p-8 backdrop-blur-sm space-y-6">
+        <p class="text-sm text-neutral-600">Content block above divider</p>
+        <Separator />
+        <p class="text-sm text-neutral-600">Content block below divider</p>
+      </div>
+    </section>
+
+    {/* Accordion Primitive */}
+    <section class="mb-20">
+      <h2 class="text-2xl font-medium tracking-tight text-black mb-8">Accordion (Zero Radix)</h2>
+      <div class="rounded-3xl border border-black/10 bg-white/60 p-8 backdrop-blur-sm">
+        <Accordion
+          client:load
+          items={[
+            {
+              id: 'sg-1',
+              title: 'What design deliverables do you provide?',
+              content: 'Full branding systems, digital web designs in Figma, custom interactive prototypes, and production design tokens.',
+            },
+            {
+              id: 'sg-2',
+              title: 'How long does a typical engagement take?',
+              content: 'Projects typically range from 4 to 8 weeks depending on scope, fidelity, and system complexity.',
+            },
+          ]}
+        />
       </div>
     </section>
   </div>
