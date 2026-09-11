@@ -1,4 +1,4 @@
-# Noura — Modern Creative Agency & Portfolio
+# Pradnya — Modern Creative Agency & Portfolio
 
 A modern, high-performance website rebuilt from the ground up using **Astro 5**, **React 19**, **Tailwind CSS**, and **Radix-Free ShadCN UI**. Completely decoupled from legacy runtimes, jQuery polyfills, and Webflow client-side scripts.
 

@@ -4,7 +4,7 @@ import { Accordion } from "@/components/ui/accordion";
 const faqs = [
   {
     number: "1",
-    question: "What types of design projects does Noura take on?",
+    question: "What types of design projects does Pradnya take on?",
     answer: "We specialize in brand identity design, high-converting bespoke marketing websites, design systems, and digital mobile product user experiences.",
   },
   {
