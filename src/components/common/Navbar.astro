@@ -20,13 +20,22 @@ const navLinks = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
     <div class="flex items-center justify-between rounded-full border border-black/10 bg-white/70 px-4 sm:px-6 py-3 backdrop-blur-md shadow-sm">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2" aria-label="Pradnya Home">
-        <img
-          src="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f11d4e313a362d3663da0_logo-3.svg"
-          alt="Pradnya Logo"
-          class="h-6 w-auto"
-          loading="eager"
-        />
+      <a href="/" class="flex items-center gap-2.5 group" aria-label="Pradnya Home">
+        <svg class="h-6 w-auto" viewBox="0 0 34 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="nav_p_grad" x1="0" y1="11" x2="34" y2="11" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FF4D00"/>
+              <stop offset="0.3125" stop-color="#E7EB4C"/>
+              <stop offset="0.682292" stop-color="#0B90CB"/>
+              <stop offset="1" stop-color="#0C59C1"/>
+            </linearGradient>
+          </defs>
+          <rect width="34" height="22" rx="5" fill="url(#nav_p_grad)"/>
+          <path d="M12 5h4.8a3.5 3.5 0 0 1 3.5 3.5c0 1.933-1.567 3.5-3.5 3.5H15v5h-3V5zm3 4.6h1.6a1.1 1.1 0 0 0 1.1-1.1c0-.608-.492-1.1-1.1-1.1H15v2.2z" fill="#FFFFFF"/>
+        </svg>
+        <span class="text-lg font-medium tracking-tight text-black transition-colors group-hover:text-neutral-700 flex items-center">
+          Pradnya<span class="text-[9px] font-semibold text-neutral-400 ml-0.5 -translate-y-1">™</span>
+        </span>
       </a>
 
       <!-- Desktop Navigation Links with Rolling Text Hover -->
