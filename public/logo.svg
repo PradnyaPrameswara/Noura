@@ -1,0 +1,16 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 26" width="148" height="26" fill="none">
+  <defs>
+    <linearGradient id="logo_p_grad" x1="0" y1="13" x2="38" y2="13" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF4D00"/>
+      <stop offset="0.3125" stop-color="#E7EB4C"/>
+      <stop offset="0.682292" stop-color="#0B90CB"/>
+      <stop offset="1" stop-color="#0C59C1"/>
+    </linearGradient>
+  </defs>
+  <!-- 'P' Logo Mark -->
+  <rect width="38" height="26" rx="6" fill="url(#logo_p_grad)"/>
+  <path d="M13 6h5.8a4.2 4.2 0 0 1 4.2 4.2c0 2.32-1.88 4.2-4.2 4.2H16.5v6H13V6zm3.5 5.7h2.2a1.5 1.5 0 0 0 1.5-1.5 1.5 1.5 0 0 0-1.5-1.5H16.5v3z" fill="#FFFFFF"/>
+  <!-- Pradnya Brand Text -->
+  <text x="48" y="19" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="600" letter-spacing="-0.03em" fill="#0A0A0A">Pradnya</text>
+  <text x="124" y="11" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="600" fill="#737373">™</text>
+</svg>

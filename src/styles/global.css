@@ -33,7 +33,7 @@
   }
 
   body {
-    @apply bg-noura-beige text-noura-black font-sans selection:bg-neutral-900 selection:text-white;
+    @apply bg-pradnya-beige text-pradnya-black font-sans selection:bg-neutral-900 selection:text-white;
     overflow-x: hidden;
   }
 }

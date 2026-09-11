@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        noura: {
+        pradnya: {
           beige: '#f8f7f3',
           black: '#000000',
           white: '#ffffff',

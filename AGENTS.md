@@ -1,4 +1,4 @@
-# Agent Operating Guidelines — Noura Project
+# Agent Operating Guidelines — Pradnya Project
 
 This document governs agent behavior in this repository. All agents interacting with this codebase must follow these operational rules, communication modes, and skill workflows.
 

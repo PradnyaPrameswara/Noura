@@ -39,7 +39,7 @@ export function MobileNav() {
 
       {/* Mobile Drawer Overlay */}
       <div
-        className={`fixed inset-0 z-40 flex flex-col justify-between bg-noura-beige p-8 pt-28 transition-all duration-500 ease-in-out ${
+        className={`fixed inset-0 z-40 flex flex-col justify-between bg-pradnya-beige p-8 pt-28 transition-all duration-500 ease-in-out ${
           isOpen
             ? "opacity-100 pointer-events-auto translate-y-0"
             : "opacity-0 pointer-events-none -translate-y-4"
