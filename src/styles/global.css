@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'BDO Grotesk';
-  src: url('https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684c3453d8e129e250cb848b_BDOGrotesk-VF.ttf') format('truetype');
+  src: url('/fonts/BDOGrotesk-VF.ttf') format('truetype');
   font-weight: 300 900;
   font-style: normal;
   font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: 'Roboto Mono';
-  src: url('https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/68502e19eda7063bdecd65cf_RobotoMono-Medium.ttf') format('truetype');
+  src: url('/fonts/RobotoMono-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: 'Roboto Mono';
-  src: url('https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/68502e1934f33beaa722e684_RobotoMono-Regular.ttf') format('truetype');
+  src: url('/fonts/RobotoMono-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

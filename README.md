@@ -1,4 +1,4 @@
-# Pradnya — Modern Creative Agency & Portfolio
+# Pradnya ï¿½ Modern Creative Agency & Portfolio
 
 A modern, high-performance website rebuilt from the ground up using **Astro 5**, **React 19**, **Tailwind CSS**, and **Radix-Free ShadCN UI**. Completely decoupled from legacy runtimes, jQuery polyfills, and Webflow client-side scripts.
 
@@ -61,23 +61,35 @@ npm run lint:oxlint
 
 ```
 +-- .agents/               # Installed Agent Skills & SDLC workflows
-+-- public/                # Static public assets (favicons, icons)
++-- public/                # Static local assets (100% self-contained, zero CDN)
+|   +-- favicon.svg        # 'P' brand favicon
+|   +-- logo.svg           # 'P' brand logo
+|   +-- fonts/             # Self-hosted fonts (BDOGrotesk, RobotoMono)
+|   +-- images/            # Categorized local image assets
+|   |   +-- about/         # Studio showcase & team visuals
+|   |   +-- blog/          # Article covers & mockups
+|   |   +-- brands/        # Partner brand SVG logos
+|   |   +-- hero/          # Hero scatter collage images
+|   |   +-- social/        # Social media vector icons
+|   |   +-- works/         # Case study visuals & screenshots
+|   |   +-- og-image.png   # OpenGraph social preview image
+|   +-- videos/            # Ambient videos & poster frames
 +-- src/
-¦   +-- components/
-¦   ¦   +-- about/         # 3D interactive cube & about components
-¦   ¦   +-- blog/          # Blog cards & newsletter forms
-¦   ¦   +-- common/        # Navbar (rolling text hover), MobileNav, Footer
-¦   ¦   +-- contact/       # Contact form & FAQ accordion
-¦   ¦   +-- home/          # Hero, Marquee, Sticky sections, Work lists
-¦   ¦   +-- ui/            # Radix-Free ShadCN primitives (Button, Accordion, Badge, etc.)
-¦   ¦   +-- works/         # Case study components
-¦   +-- content/           # Astro Content Collections (works & blog)
-¦   +-- layouts/           # BaseLayout & PageLayout
-¦   +-- lib/               # Utility functions (cn helper)
-¦   +-- pages/             # 15 Astro static routes
-¦   +-- styles/            # Global styles, fonts, and custom CSS utilities
+ï¿½   +-- components/
+ï¿½   ï¿½   +-- about/         # 3D interactive cube & about components
+ï¿½   ï¿½   +-- blog/          # Blog cards & newsletter forms
+ï¿½   ï¿½   +-- common/        # Navbar (rolling text hover), MobileNav, Footer
+ï¿½   ï¿½   +-- contact/       # Contact form & FAQ accordion
+ï¿½   ï¿½   +-- home/          # Hero, Marquee, Sticky sections, Work lists
+ï¿½   ï¿½   +-- ui/            # Radix-Free ShadCN primitives (Button, Accordion, Badge, etc.)
+ï¿½   ï¿½   +-- works/         # Case study components
+ï¿½   +-- content/           # Astro Content Collections (works & blog)
+ï¿½   +-- layouts/           # BaseLayout & PageLayout
+ï¿½   +-- lib/               # Utility functions (cn helper)
+ï¿½   +-- pages/             # 15 Astro static routes
+ï¿½   +-- styles/            # Global styles, fonts, and custom CSS utilities
 +-- tools/
-¦   +-- oxlint/anti-slop/  # Vendored anti-slop rules & plugin
+ï¿½   +-- oxlint/anti-slop/  # Vendored anti-slop rules & plugin
 +-- astro.config.mjs       # Astro configuration
 +-- lsp-ai.json            # LSP-AI language server configuration
 +-- oxlint.config.mjs      # Oxlint anti-slop configuration

@@ -2,7 +2,7 @@
 title: "Why great branding starts with strategy, not just design"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
 publishDate: "June 22, 2025"
-coverImage: "https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/6859868d76e1275126c9b104_Tennis%20Court%20Smiley.webp"
+coverImage: "/images/blog/strategy-cover.webp"
 category: "Branding"
 ---
 

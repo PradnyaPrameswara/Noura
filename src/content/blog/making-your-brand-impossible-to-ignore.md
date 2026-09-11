@@ -2,7 +2,7 @@
 title: "Making your brand impossible to ignore"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
 publishDate: "June 19, 2025"
-coverImage: "https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/68598908cfa2eb9fc47f7d77_Vibrant%20Floral%20Burst.webp"
+coverImage: "/images/blog/brand-cover.webp"
 category: "Branding"
 ---
 

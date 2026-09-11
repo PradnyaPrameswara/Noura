@@ -2,7 +2,7 @@
 title: "How to build a website that sells — not just looks good"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
 publishDate: "June 20, 2025"
-coverImage: "https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/685988d3a2b50c106d1c84f4_66630bbeb80fa05e56541862_carso-mockup.webp"
+coverImage: "/images/blog/website-cover.webp"
 category: "Websites"
 ---
 
