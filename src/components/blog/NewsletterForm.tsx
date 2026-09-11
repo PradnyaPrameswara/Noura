@@ -52,7 +52,7 @@ export function NewsletterForm() {
             placeholder="Your email address"
             required
             disabled={status === "submitting"}
-            className="w-full h-14 rounded-full border border-black/15 bg-white/90 pl-6 pr-16 text-sm text-black placeholder:text-neutral-400 backdrop-blur-sm transition-all focus:border-black focus:outline-none focus:ring-1 focus:ring-black disabled:opacity-50"
+            className="w-full h-14 rounded-full border border-black/15 bg-white/90 pl-6 pr-16 text-base sm:text-sm text-black placeholder:text-neutral-400 backdrop-blur-sm transition-all focus:border-black focus:outline-none focus:ring-1 focus:ring-black disabled:opacity-50"
           />
 
           <Button
