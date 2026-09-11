@@ -28,7 +28,7 @@ When reviewing pull requests, diffs, or code changes, use ultra-compressed one-l
 Every non-trivial task performed in this project MUST execute through the corresponding engineering skills installed in `.agents/skills/`:
 
 ```
-DEFINE --? PLAN --? BUILD --? VERIFY --? REVIEW --? SHIP
+DEFINE --? PLAN --? BUILD --? VERIFY --? REVIEW --? SHIP (BRANCH + PR)
 ```
 
 ### Phase 1: Define & Clarify
@@ -60,8 +60,14 @@ DEFINE --? PLAN --? BUILD --? VERIFY --? REVIEW --? SHIP
 - **`security-and-hardening`**: Check input validation, CSRF/XSS vectors, and external data handling.
 - **`performance-optimization`**: Ensure sub-50ms interaction latencies, clean chunk splitting, and zero layout shift.
 
-### Phase 6: Ship & Version
-- **`git-workflow-and-versioning`**: Create atomic, conventional commits (`feat:`, `fix:`, `refactor:`, `chore:`).
+### Phase 6: Ship & Version (Branch, Push & PR Workflow)
+- **`git-workflow-and-versioning`**:
+  - **MANDATORY**: Never push directly to `main`.
+  - Every change must be made in a newly branched branch (`feat/*`, `fix/*`, `docs/*`, `refactor/*`, `chore/*`).
+  - Create atomic conventional commits (`feat:`, `fix:`, `refactor:`, `chore:`, `docs:`).
+  - Push branch to remote: `git push -u origin <branch-name>`.
+  - Open a Pull Request to `main` via `gh pr create`.
+  - **STRICT MERGE POLICY**: Never self-merge or auto-merge PRs. All pull requests MUST be reviewed, approved, and merged by the user!
 - **`documentation-and-adrs`**: Document non-obvious architecture choices and public component APIs.
 - **`shipping-and-launch`**: Run pre-flight checklist before tagging or merging to main.
 
@@ -69,6 +75,7 @@ DEFINE --? PLAN --? BUILD --? VERIFY --? REVIEW --? SHIP
 
 ## 3. Codebase Invariants
 
+- **Strict Branch & PR Workflow**: Zero direct commits to `main`. Every task = new branch + push + PR. User approval required for all merges.
 - **Strict Zero Webflow Runtime**: No `webflow.js`, no jQuery, no Webflow CSS classes (`w-*`), no `data-wf-*` markup.
 - **Strict Zero Radix UI**: All UI primitives in `src/components/ui/` must remain pure React / Tailwind / Lucide without `@radix-ui/*` dependencies.
 - **Strict Zero `useEffect`**: Component interactivity must be purely event-driven, derived in render, or handled by CSS transitions.
