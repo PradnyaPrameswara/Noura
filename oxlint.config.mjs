@@ -15,7 +15,6 @@ export default defineConfig({
     "**/.pi/**",
     "**/.roo/**",
     "**/.windsurf/**",
-    "**/_webflow_original/**",
     "**/dist/**",
     "**/tools/**",
   ],
