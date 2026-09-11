@@ -16,9 +16,6 @@ dist/
 .lexa/
 .codedb/
 
-# Archived raw Webflow export
-_webflow_original/
-
 # Operating System & Editor artifacts
 .DS_Store
 Thumbs.db
