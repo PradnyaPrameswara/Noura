@@ -28,9 +28,9 @@ const { slug, title, description, coverImage, secondImage } = Astro.props;
       />
       {/* Floating View Case Pill */}
       <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <span class="rounded-full bg-black/80 px-5 py-2.5 text-xs font-medium text-white shadow-xl backdrop-blur-md">
+        <Badge variant="dark" className="px-5 py-2.5 text-xs shadow-xl backdrop-blur-md">
           View case
-        </span>
+        </Badge>
       </div>
     </div>
 
