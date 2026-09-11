@@ -1,0 +1,33 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import Cube3D from '@/components/about/Cube3D.astro';
+import ApproachSection from '@/components/about/ApproachSection.astro';
+import ValuesSticky from '@/components/about/ValuesSticky.astro';
+import TeamSection from '@/components/about/TeamSection.astro';
+---
+
+<PageLayout
+  title="About Us - Noura"
+  description="Designing brands, websites, and apps with clarity and purpose."
+>
+  {/* Header Section */}
+  <section class="pt-36 pb-16">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <span class="inline-flex rounded-full border border-black/15 bg-white/60 px-3 py-1 text-xs font-mono tracking-wider uppercase text-black">
+          About us
+        </span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-tight">
+        Designing brands, websites, and apps with clarity and purpose.
+      </h1>
+    </div>
+
+    {/* 3D Rotating Cube Component */}
+    <Cube3D />
+  </section>
+
+  <ApproachSection />
+  <ValuesSticky />
+  <TeamSection />
+</PageLayout>

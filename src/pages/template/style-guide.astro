@@ -1,0 +1,91 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+
+const headings = [
+  { tag: 'h1', class: 'text-6xl font-medium', sample: 'Heading 1' },
+  { tag: 'h2', class: 'text-5xl font-medium', sample: 'Heading 2' },
+  { tag: 'h3', class: 'text-4xl font-medium', sample: 'Heading 3' },
+  { tag: 'h4', class: 'text-3xl font-medium', sample: 'Heading 4' },
+  { tag: 'h5', class: 'text-2xl font-medium', sample: 'Heading 5' },
+  { tag: 'h6', class: 'text-xl font-medium', sample: 'Heading 6' },
+];
+
+const colors = [
+  { name: 'Noura Beige', class: 'bg-noura-beige border border-black/15', hex: '#f8f7f3' },
+  { name: 'Pitch Black', class: 'bg-black text-white', hex: '#000000' },
+  { name: 'Pure White', class: 'bg-white border border-black/15', hex: '#ffffff' },
+  { name: 'Grey 100', class: 'bg-noura-grey-100', hex: '#dddddd' },
+  { name: 'Grey 300', class: 'bg-noura-grey-300 text-white', hex: '#6b6b6b' },
+  { name: 'Grey 500', class: 'bg-noura-grey-500 text-white', hex: '#333333' },
+  { name: 'Grey 900', class: 'bg-noura-grey-900 text-white', hex: '#0a0a0a' },
+];
+---
+
+<PageLayout
+  title="Style Guide - Noura Design System"
+  description="Client-first design tokens, typography scales, buttons, and components."
+>
+  <div class="pt-36 pb-24 max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="mb-16 border-b border-black/10 pb-8">
+      <h1 class="text-4xl sm:text-5xl font-medium tracking-tight text-black mb-3">
+        Style Guide
+      </h1>
+      <p class="text-neutral-600">
+        System tokens, typography scales, colors, buttons, and UI primitives.
+      </p>
+    </div>
+
+    {/* Color Palette */}
+    <section class="mb-20">
+      <h2 class="text-2xl font-medium tracking-tight text-black mb-8">Color Palette</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {colors.map((c) => (
+          <div class="rounded-2xl border border-black/10 p-4 bg-white/60 backdrop-blur-sm">
+            <div class={`h-20 w-full rounded-xl mb-3 flex items-end p-2 text-xs font-mono ${c.class}`}>
+              {c.hex}
+            </div>
+            <div class="text-sm font-medium text-black">{c.name}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Typography Scale */}
+    <section class="mb-20">
+      <h2 class="text-2xl font-medium tracking-tight text-black mb-8">Typography Scale (BDO Grotesk)</h2>
+      <div class="space-y-8 rounded-3xl border border-black/10 bg-white/60 p-8 backdrop-blur-sm">
+        {headings.map((h) => (
+          <div class="border-b border-black/5 pb-6 last:border-0 last:pb-0 flex flex-col md:flex-row md:items-baseline justify-between gap-4">
+            <span class="font-mono text-xs text-neutral-400 w-24 uppercase">{h.tag}</span>
+            <div class={h.class}>{h.sample}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Button Primitives */}
+    <section class="mb-20">
+      <h2 class="text-2xl font-medium tracking-tight text-black mb-8">Button System (Radix-Free ShadCN)</h2>
+      <div class="flex flex-wrap items-center gap-6 rounded-3xl border border-black/10 bg-white/60 p-8 backdrop-blur-sm">
+        <Button variant="dark">Dark Variant</Button>
+        <Button variant="light-small">Light Small</Button>
+        <Button variant="solid">Solid Button</Button>
+        <Button variant="outline">Outline Button</Button>
+      </div>
+    </section>
+
+    {/* Badge & Pill Primitives */}
+    <section class="mb-20">
+      <h2 class="text-2xl font-medium tracking-tight text-black mb-8">Badges & Labels</h2>
+      <div class="flex flex-wrap items-center gap-4 rounded-3xl border border-black/10 bg-white/60 p-8 backdrop-blur-sm">
+        <Badge variant="default">Default Pill</Badge>
+        <Badge variant="dark">Dark Pill</Badge>
+        <Badge variant="muted">Muted Tag</Badge>
+        <Badge variant="label">Label Tag</Badge>
+      </div>
+    </section>
+  </div>
+</PageLayout>

@@ -1,0 +1,125 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import PageLayout from '@/layouts/PageLayout.astro';
+import { Badge } from '@/components/ui/badge';
+
+export async function getStaticPaths() {
+  const works = await getCollection('works');
+
+  return works.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'works'>;
+}
+
+const { entry } = Astro.props;
+
+const { Content } = await entry.render();
+
+const { data } = entry;
+---
+
+<PageLayout
+  title={`${data.title} - Noura Case Study`}
+  description={data.description}
+  ogImage={data.coverImage}
+>
+  <article class="pt-36 pb-20">
+    {/* Project Header */}
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+      <div class="max-w-3xl mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <Badge variant="default">{data.title}</Badge>
+          <span class="text-xs sm:text-sm text-neutral-500 font-mono">{data.description}</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-tight">
+          {data.tagline}
+        </h1>
+      </div>
+
+      {/* Hero Cover Image */}
+      <div class="rounded-3xl overflow-hidden border border-black/10 shadow-xl max-h-[700px] bg-neutral-100">
+        <img
+          src={data.coverImage}
+          alt={data.title}
+          class="h-full w-full object-cover"
+          loading="eager"
+        />
+      </div>
+    </header>
+
+    {/* Challenge Section */}
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-black/10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+        <div class="md:col-span-5 space-y-4">
+          <Badge variant="muted">Challenge</Badge>
+          <h2 class="text-2xl sm:text-3xl font-medium tracking-tight text-black">
+            {data.challengeTitle}
+          </h2>
+          <p class="text-sm sm:text-base text-neutral-600 leading-relaxed">
+            {data.challengeDescription}
+          </p>
+        </div>
+
+        <div class="md:col-span-7 rounded-3xl overflow-hidden border border-black/10 bg-neutral-100 shadow-md">
+          <img
+            src={data.challengeImage}
+            alt="Challenge mockup"
+            class="w-full h-auto object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    {/* Full-width Final Showcase */}
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="rounded-3xl overflow-hidden border border-black/10 shadow-xl bg-neutral-100">
+        <img
+          src={data.finalImage}
+          alt="Final design showcase"
+          class="w-full h-auto object-cover"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    {/* Results Section */}
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-black/10">
+      <div class="max-w-3xl space-y-4">
+        <Badge variant="muted">Results</Badge>
+        <h2 class="text-2xl sm:text-3xl font-medium tracking-tight text-black">
+          {data.resultsTitle}
+        </h2>
+        <p class="text-sm sm:text-base text-neutral-600 leading-relaxed">
+          {data.resultsDescription}
+        </p>
+      </div>
+    </section>
+
+    {/* Next Case Study Navigation */}
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 border-t border-black/10">
+      <a
+        href={`/works/${data.nextCase.slug}`}
+        class="group block max-w-xl mx-auto rounded-3xl border border-black/10 bg-white/60 p-6 backdrop-blur-sm transition-all duration-300 hover:border-black/30 hover:shadow-xl"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-mono uppercase tracking-wider text-neutral-400">Next case</span>
+          <Badge variant="dark">{data.nextCase.title}</Badge>
+        </div>
+        <div class="h-64 rounded-2xl overflow-hidden bg-neutral-100 mb-2">
+          <img
+            src={data.nextCase.image}
+            alt={data.nextCase.title}
+            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+        </div>
+      </a>
+    </nav>
+  </article>
+</PageLayout>

@@ -1,0 +1,109 @@
+---
+---
+
+<div class="cube-container py-12 flex items-center justify-center">
+  <div class="scene w-72 sm:w-96 h-72 sm:h-96">
+    <div class="cube relative w-full h-full transform-style-3d animate-cube-spin hover:[animation-play-state:paused]">
+      {/* Face 1: Front */}
+      <div class="face face-1 absolute inset-0 rounded-3xl overflow-hidden border border-black/10 bg-black shadow-2xl">
+        <img
+          src="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/6850326ff3a28d4d048b5ac2_Blue%20Stadium%20Seats.webp"
+          alt="Stadium seats"
+          class="h-full w-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+        <div class="absolute bottom-5 left-5 right-5 text-left">
+          <p class="text-xs font-mono text-white/90">Our team heading to your project</p>
+        </div>
+      </div>
+
+      {/* Face 2: Right */}
+      <div class="face face-2 absolute inset-0 rounded-3xl overflow-hidden border border-black/10 bg-black shadow-2xl">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          class="h-full w-full object-cover"
+          poster="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9%2F685b3a2e43e0dec3dce36431_Focused%20Typing%20in%20Moody%20Light-poster-00001.jpg"
+        >
+          <source
+            src="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9%2F685b3a2e43e0dec3dce36431_Focused%20Typing%20in%20Moody%20Light-transcode.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+        <div class="absolute bottom-5 left-5 right-5 text-left">
+          <p class="text-xs font-mono text-white/90">Just a cool banner of us</p>
+        </div>
+      </div>
+
+      {/* Face 3: Back */}
+      <div class="face face-3 absolute inset-0 rounded-3xl overflow-hidden border border-black/10 bg-black shadow-2xl">
+        <img
+          src="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/685033f405759dfe64e14dcf_Creative%20Portrait%20Blur.webp"
+          alt="Creative portrait"
+          class="h-full w-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+        <div class="absolute bottom-5 left-5 right-5 text-left">
+          <p class="text-xs font-mono text-white/90">Working hard every day</p>
+        </div>
+      </div>
+
+      {/* Face 4: Left */}
+      <div class="face face-4 absolute inset-0 rounded-3xl overflow-hidden border border-black/10 bg-black shadow-2xl">
+        <img
+          src="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/685034697e299c8b8967c5a1_M01_mc_2-1170x780.png"
+          alt="Team ride"
+          class="h-full w-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+        <div class="absolute bottom-5 left-5 right-5 text-left">
+          <p class="text-xs font-mono text-white/90">Team going for a ride</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    perspective: 1200px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Responsive 3D depths */
+  @media (min-width: 640px) {
+    .face-1 { transform: rotateY(0deg) translateZ(192px); }
+    .face-2 { transform: rotateY(90deg) translateZ(192px); }
+    .face-3 { transform: rotateY(180deg) translateZ(192px); }
+    .face-4 { transform: rotateY(270deg) translateZ(192px); }
+  }
+
+  @media (max-width: 639px) {
+    .face-1 { transform: rotateY(0deg) translateZ(144px); }
+    .face-2 { transform: rotateY(90deg) translateZ(144px); }
+    .face-3 { transform: rotateY(180deg) translateZ(144px); }
+    .face-4 { transform: rotateY(270deg) translateZ(144px); }
+  }
+
+  @keyframes cubeSpin {
+    0% { transform: rotateY(0deg); }
+    20% { transform: rotateY(0deg); }
+    25% { transform: rotateY(-90deg); }
+    45% { transform: rotateY(-90deg); }
+    50% { transform: rotateY(-180deg); }
+    70% { transform: rotateY(-180deg); }
+    75% { transform: rotateY(-270deg); }
+    95% { transform: rotateY(-270deg); }
+    100% { transform: rotateY(-360deg); }
+  }
+
+  .animate-cube-spin {
+    animation: cubeSpin 16s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  }
+</style>

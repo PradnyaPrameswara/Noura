@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '@/layouts/PageLayout.astro';
+import BlogCard from '@/components/blog/BlogCard.astro';
+import { NewsletterForm } from '@/components/blog/NewsletterForm';
+
+const posts = await getCollection('blog');
+---
+
+<PageLayout
+  title="Blog & Articles - Noura"
+  description="Content about design, branding, strategy, and digital product experience."
+>
+  <section class="pt-36 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Blog Header */}
+      <div class="mb-16">
+        <h1 class="text-4xl sm:text-6xl font-medium tracking-tight text-black mb-3">
+          Articles
+        </h1>
+        <p class="font-mono text-xs sm:text-sm text-neutral-500">
+          // Content about design, branding and digital products
+        </p>
+      </div>
+
+      {/* Blog Cards Grid */}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        {posts.map((post) => (
+          <BlogCard
+            slug={post.slug}
+            title={post.data.title}
+            description={post.data.description}
+            publishDate={post.data.publishDate}
+            coverImage={post.data.coverImage}
+          />
+        ))}
+      </div>
+
+      {/* Newsletter Subscription Component */}
+      <NewsletterForm client:visible />
+    </div>
+  </section>
+</PageLayout>

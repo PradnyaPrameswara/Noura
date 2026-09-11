@@ -1,0 +1,95 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import PageLayout from '@/layouts/PageLayout.astro';
+import { Badge } from '@/components/ui/badge';
+import BlogCard from '@/components/blog/BlogCard.astro';
+import CTASection from '@/components/home/CTASection.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+}
+
+const { entry } = Astro.props;
+
+const { Content } = await entry.render();
+
+const { data } = entry;
+
+const allPosts = await getCollection('blog');
+
+const otherPosts = allPosts.filter((p) => p.slug !== entry.slug);
+---
+
+<PageLayout
+  title={`${data.title} - Noura Articles`}
+  description={data.description}
+  ogImage={data.coverImage}
+>
+  <article class="pt-36 pb-20">
+    {/* Article Header */}
+    <header class="max-w-4xl mx-auto px-4 sm:px-6 mb-16 text-center">
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <Badge variant="default">{data.category}</Badge>
+        <span class="font-mono text-xs text-neutral-500">{data.publishDate}</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-black leading-tight mb-6">
+        {data.title}
+      </h1>
+
+      <p class="text-base sm:text-xl text-neutral-600 max-w-2xl mx-auto mb-12">
+        {data.description}
+      </p>
+
+      {/* Featured Cover Image */}
+      <div class="rounded-3xl overflow-hidden border border-black/10 shadow-xl max-h-[600px] bg-neutral-100">
+        <img
+          src={data.coverImage}
+          alt={data.title}
+          class="h-full w-full object-cover"
+          loading="eager"
+        />
+      </div>
+    </header>
+
+    {/* Article Body Content */}
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 mb-24 prose prose-neutral prose-lg">
+      <div class="space-y-6 text-neutral-700 leading-relaxed [&_h2]:text-2xl [&_h2]:sm:text-3xl [&_h2]:font-medium [&_h2]:tracking-tight [&_h2]:text-black [&_h2]:mt-10 [&_h2]:mb-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2">
+        <Content />
+      </div>
+    </section>
+
+    {/* Other Articles Cross-Promotion */}
+    {otherPosts.length > 0 && (
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-black/10">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="h-1.5 w-1.5 rounded-full bg-black" />
+          <span class="font-mono text-xs uppercase tracking-wider text-neutral-500">Other blog posts</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {otherPosts.map((post) => (
+            <BlogCard
+              slug={post.slug}
+              title={post.data.title}
+              description={post.data.description}
+              publishDate={post.data.publishDate}
+              coverImage={post.data.coverImage}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <CTASection />
+  </article>
+</PageLayout>

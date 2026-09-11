@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'BDO Grotesk';
+  src: url('https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684c3453d8e129e250cb848b_BDOGrotesk-VF.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/68502e19eda7063bdecd65cf_RobotoMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/68502e1934f33beaa722e684_RobotoMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-noura-beige text-noura-black font-sans selection:bg-neutral-900 selection:text-white;
+    overflow-x: hidden;
+  }
+}
+
+/* 3D Cube utilities */
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Rolling text animation utility */
+.rolling-text-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  height: 1.25em;
+  overflow: hidden;
+}
+
+.rolling-text-1,
+.rolling-text-2 {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rolling-text-2 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.group:hover .rolling-text-1 {
+  transform: translateY(-100%);
+}
+
+.group:hover .rolling-text-2 {
+  transform: translateY(-100%);
+}

@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import WorkCard from '@/components/works/WorkCard.astro';
+
+const allWorks = await getCollection('works');
+---
+
+<section class="py-24 border-t border-black/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Section Header with Project Counter */}
+    <div class="flex items-center justify-between mb-12">
+      <div class="flex items-center gap-3">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-black">
+          Work
+        </h2>
+        <span class="flex h-7 w-7 items-center justify-center rounded-full border border-black/20 text-xs font-mono font-medium">
+          {allWorks.length}
+        </span>
+      </div>
+
+      <a href="/works" class="text-sm font-medium hover:opacity-60 transition-opacity">
+        View all →
+      </a>
+    </div>
+
+    {/* Project Cards Grid */}
+    <div class="grid grid-cols-1 gap-8">
+      {allWorks.map((work) => (
+        <WorkCard
+          slug={work.slug}
+          title={work.data.title}
+          description={work.data.description}
+          coverImage={work.data.coverImage}
+          secondImage={work.data.secondImage}
+        />
+      ))}
+    </div>
+  </div>
+</section>

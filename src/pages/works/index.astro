@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '@/layouts/PageLayout.astro';
+import WorkCard from '@/components/works/WorkCard.astro';
+import CTASection from '@/components/home/CTASection.astro';
+
+const allWorks = await getCollection('works');
+---
+
+<PageLayout
+  title="Works - Noura Portfolio"
+  description="Explore our latest brand identities, web applications, and digital experiences."
+>
+  <section class="pt-36 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Works Page Header */}
+      <div class="flex items-center justify-between mb-12">
+        <div class="flex items-center gap-3">
+          <h1 class="text-3xl sm:text-5xl font-medium tracking-tight text-black">
+            Work
+          </h1>
+          <span class="flex h-7 w-7 items-center justify-center rounded-full border border-black/20 text-xs font-mono font-medium">
+            {allWorks.length}
+          </span>
+        </div>
+      </div>
+
+      {/* Grid of Work Cards */}
+      <div class="grid grid-cols-1 gap-8">
+        {allWorks.map((work) => (
+          <WorkCard
+            slug={work.slug}
+            title={work.data.title}
+            description={work.data.description}
+            coverImage={work.data.coverImage}
+            secondImage={work.data.secondImage}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</PageLayout>

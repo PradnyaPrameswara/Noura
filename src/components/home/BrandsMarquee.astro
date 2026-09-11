@@ -1,0 +1,52 @@
+---
+const brands = [
+  { id: 1, logo: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f2183813ffc6a405ce0a6_logo-1.svg', name: 'Loreipsum', desc: 'Lorem ipsum dolor sit amet, consectetur.' },
+  { id: 2, logo: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f2183813ffc6a405ce0a7_logo-2.svg', name: 'Loreipsum', desc: 'Lorem ipsum dolor sit amet, consectetur.' },
+  { id: 3, logo: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f2183813ffc6a405ce0a8_logo-3.svg', name: 'Loreipsum', desc: 'Lorem ipsum dolor sit amet, consectetur.' },
+  { id: 4, logo: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f2183813ffc6a405ce0a9_logo-4.svg', name: 'Loreipsum', desc: 'Lorem ipsum dolor sit amet, consectetur.' },
+  { id: 5, logo: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f2183813ffc6a405ce0aa_logo-5.svg', name: 'Loreipsum', desc: 'Lorem ipsum dolor sit amet, consectetur.' },
+  { id: 6, logo: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f2183813ffc6a405ce0ab_logo-6.svg', name: 'Loreipsum', desc: 'Lorem ipsum dolor sit amet, consectetur.' },
+  { id: 7, logo: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f2183813ffc6a405ce0ac_logo-7.svg', name: 'Loreipsum', desc: 'Lorem ipsum dolor sit amet, consectetur.' },
+  { id: 8, logo: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f2183813ffc6a405ce0ad_logo-8.svg', name: 'Loreipsum', desc: 'Lorem ipsum dolor sit amet, consectetur.' },
+];
+---
+
+<section class="py-20 overflow-hidden border-t border-black/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="h-1.5 w-1.5 rounded-full bg-black" />
+      <span class="font-mono text-xs uppercase tracking-wider text-neutral-500">Clients</span>
+    </div>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-black max-w-3xl leading-snug">
+      Trusted by brands who value design, clarity, and results — from emerging startups to industry-leading names.
+    </h2>
+  </div>
+
+  {/* Infinite Marquee Track with CSS Animation */}
+  <div class="relative w-full flex overflow-hidden group">
+    <div class="flex shrink-0 gap-6 animate-marquee group-hover:[animation-play-state:paused]">
+      {brands.map((brand) => (
+        <div class="w-72 shrink-0 rounded-3xl border border-black/10 bg-white/70 p-6 backdrop-blur-sm transition-all hover:border-black/30">
+          <div class="h-12 flex items-center mb-6">
+            <img src={brand.logo} alt={brand.name} class="h-8 w-auto object-contain" loading="lazy" />
+          </div>
+          <h3 class="text-base font-medium text-black mb-1">{brand.name}</h3>
+          <p class="text-xs text-neutral-500 leading-relaxed">{brand.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    {/* Duplicate Track for seamless loop */}
+    <div class="flex shrink-0 gap-6 animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
+      {brands.map((brand) => (
+        <div class="w-72 shrink-0 rounded-3xl border border-black/10 bg-white/70 p-6 backdrop-blur-sm transition-all hover:border-black/30">
+          <div class="h-12 flex items-center mb-6">
+            <img src={brand.logo} alt={brand.name} class="h-8 w-auto object-contain" loading="lazy" />
+          </div>
+          <h3 class="text-base font-medium text-black mb-1">{brand.name}</h3>
+          <p class="text-xs text-neutral-500 leading-relaxed">{brand.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

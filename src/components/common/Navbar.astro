@@ -1,0 +1,65 @@
+---
+import { Button } from '@/components/ui/button';
+import { MobileNav } from '@/components/common/MobileNav';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = Astro.url.pathname } = Astro.props;
+
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Works', href: '/works' },
+  { name: 'Blog', href: '/blog' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <div class="flex items-center justify-between rounded-full border border-black/10 bg-white/70 px-4 sm:px-6 py-3 backdrop-blur-md shadow-sm">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2" aria-label="Noura Home">
+        <img
+          src="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f11d4e313a362d3663da0_logo-3.svg"
+          alt="Noura Logo"
+          class="h-6 w-auto"
+          loading="eager"
+        />
+      </a>
+
+      <!-- Desktop Navigation Links with Rolling Text Hover -->
+      <nav class="hidden md:flex items-center gap-8">
+        {navLinks.map((link) => {
+          const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+          return (
+            <a
+              href={link.href}
+              class="group relative text-sm font-medium tracking-tight text-neutral-800 transition-colors"
+            >
+              <span class="rolling-text-wrap">
+                <span class={`rolling-text-1 block ${isActive ? 'font-semibold text-black' : ''}`}>
+                  {link.name}
+                </span>
+                <span class="rolling-text-2 block font-semibold text-black" aria-hidden="true">
+                  {link.name}
+                </span>
+              </span>
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Desktop Contact CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <Button href="/contact" variant="light-small">
+          Contact
+        </Button>
+      </div>
+
+      <!-- Mobile Navigation Hamburger -->
+      <MobileNav client:idle />
+    </div>
+  </div>
+</header>

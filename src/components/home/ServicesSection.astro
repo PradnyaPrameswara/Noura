@@ -1,0 +1,56 @@
+---
+const services = [
+  {
+    title: 'Branding',
+    tagline: 'Brands that resonate',
+    image: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f57038f9f0aa60e9da110_001_copy_3-1170x780%20(1).webp',
+    alt: 'Book branding mockup',
+  },
+  {
+    title: 'Websites',
+    tagline: 'Designed to convert',
+    image: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f574d1bf45416e8c3e056_66630bbeb80fa05e56541856_evelyn-render.webp',
+    alt: 'Laptop website mockup',
+  },
+  {
+    title: 'Apps',
+    tagline: 'Every tap, considered',
+    image: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/684f57a20f6e64c09db89289_Celie-1-1170x780.webp',
+    alt: 'Mobile app mockup',
+  },
+];
+---
+
+<section class="py-24 border-t border-black/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mb-16">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="h-1.5 w-1.5 rounded-full bg-black" />
+        <span class="font-mono text-xs uppercase tracking-wider text-neutral-500">Services</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-black leading-snug">
+        At Noura, we design brands, websites, and apps with clarity and purpose — clean visuals, smart strategy, and thoughtful detail that move people and ideas forward.
+      </h2>
+    </div>
+
+    {/* 3 Service Cards */}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {services.map((svc) => (
+        <div class="group rounded-3xl overflow-hidden border border-black/10 bg-white/60 p-4 backdrop-blur-sm transition-all duration-300 hover:border-black/30 hover:shadow-lg">
+          <div class="h-64 rounded-2xl overflow-hidden mb-4 bg-neutral-100">
+            <img
+              src={svc.image}
+              alt={svc.alt}
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-2">
+            <h3 class="text-xl font-medium tracking-tight text-black mb-1">{svc.title}</h3>
+            <p class="text-xs text-neutral-500">{svc.tagline}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import HeroSection from '@/components/home/HeroSection.astro';
+import BrandsMarquee from '@/components/home/BrandsMarquee.astro';
+import HomeAboutSticky from '@/components/home/HomeAboutSticky.astro';
+import WorkListSection from '@/components/home/WorkListSection.astro';
+import ServicesSection from '@/components/home/ServicesSection.astro';
+import CTASection from '@/components/home/CTASection.astro';
+---
+
+<PageLayout
+  title="Noura - Modern Agency Template"
+  description="Noura is a playful website template with smooth animations, bold visuals, and flexible layouts for agencies and designers."
+>
+  <HeroSection />
+  <div id="section-brands">
+    <BrandsMarquee />
+  </div>
+  <HomeAboutSticky />
+  <WorkListSection />
+  <ServicesSection />
+  <CTASection />
+</PageLayout>

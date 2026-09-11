@@ -1,0 +1,49 @@
+---
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+---
+
+<section class="py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative rounded-3xl overflow-hidden border border-black/10 bg-black text-white p-8 sm:p-14 lg:p-20 shadow-2xl">
+      {/* Background Looping Video */}
+      <div class="absolute inset-0 z-0 opacity-40">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          class="h-full w-full object-cover"
+          poster="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9%2F68502a795ba88b48b1e21bd5_Vibrant%20Abstract%20Artwork-poster-00001.jpg"
+        >
+          <source
+            src="https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9%2F68502a795ba88b48b1e21bd5_Vibrant%20Abstract%20Artwork-transcode.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      {/* Foreground Content */}
+      <div class="relative z-10 max-w-2xl">
+        <div class="mb-6">
+          <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-mono tracking-wide text-white backdrop-blur-md uppercase">
+            Talk to us
+          </span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-tight mb-8">
+          Partner with a design team that turns ideas into powerful digital experiences
+        </h2>
+
+        <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+          <Button href="/contact" variant="dark" className="bg-white text-black hover:bg-neutral-100">
+            Start now
+          </Button>
+          <p class="text-xs text-neutral-400 max-w-xs leading-relaxed">
+            Collaborate with our studio on brand identities, high-conversion websites, and mobile applications.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

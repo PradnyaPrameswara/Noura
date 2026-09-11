@@ -1,0 +1,29 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { ContactForm } from '@/components/contact/ContactForm';
+import { FAQSection } from '@/components/contact/FAQSection';
+---
+
+<PageLayout
+  title="Contact Us - Noura"
+  description="Get in touch with our design studio to start your next branding, website, or app project."
+>
+  <section class="pt-36 pb-24">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="mb-10">
+        <h1 class="text-4xl sm:text-6xl font-medium tracking-tight text-black mb-3">
+          Contact
+        </h1>
+        <p class="text-sm sm:text-base text-neutral-600">
+          Tell us about your project, timeline, and goals. We look forward to collaborating.
+        </p>
+      </div>
+
+      {/* Interactive Contact Form (Client Island) */}
+      <ContactForm client:load />
+
+      {/* Frequently Asked Questions Accordion (Client Island) */}
+      <FAQSection client:visible />
+    </div>
+  </section>
+</PageLayout>

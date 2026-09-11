@@ -1,0 +1,59 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Changelog - Noura Template"
+  description="Version release history and template updates."
+>
+  <div class="pt-36 pb-24 max-w-3xl mx-auto px-4 sm:px-6">
+    <header class="mb-12 border-b border-black/10 pb-8">
+      <h1 class="text-4xl sm:text-5xl font-medium tracking-tight text-black mb-3">
+        Changelog
+      </h1>
+      <p class="text-neutral-600">
+        Release history and milestone updates.
+      </p>
+    </header>
+
+    <div class="space-y-8">
+      <div class="rounded-3xl border border-black/10 bg-white/60 p-6 sm:p-8 backdrop-blur-sm">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-mono text-xs font-medium text-neutral-400">September 2026</span>
+          <span class="rounded-full bg-emerald-500/10 px-3 py-1 font-mono text-xs text-emerald-600">v2.0.0</span>
+        </div>
+        <h2 class="text-xl font-medium text-black mb-2">Modern Astro & React Re-architecture</h2>
+        <ul class="list-disc pl-6 space-y-1.5 text-sm text-neutral-600">
+          <li>Complete migration from legacy Webflow runtime to Astro 5 + Tailwind CSS</li>
+          <li>Zero jQuery, zero legacy polyfills, and zero runtime bloat</li>
+          <li>Strictly Radix-free ShadCN UI design system</li>
+          <li>Strictly zero <code class="font-mono text-xs bg-black/5 px-1 py-0.5 rounded">useEffect</code> React interactions</li>
+          <li>Hardware-accelerated CSS 3D cube and infinite marquee</li>
+        </ul>
+      </div>
+
+      <div class="rounded-3xl border border-black/10 bg-white/60 p-6 sm:p-8 backdrop-blur-sm">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-mono text-xs font-medium text-neutral-400">April 2026</span>
+          <span class="rounded-full bg-black/5 px-3 py-1 font-mono text-xs text-neutral-600">v1.1.0</span>
+        </div>
+        <h2 class="text-xl font-medium text-black mb-2">Refinements & Bugfixes</h2>
+        <ul class="list-disc pl-6 space-y-1.5 text-sm text-neutral-600">
+          <li>FAQ dropdown and accordion state fixes</li>
+          <li>Mobile responsiveness tuning</li>
+        </ul>
+      </div>
+
+      <div class="rounded-3xl border border-black/10 bg-white/60 p-6 sm:p-8 backdrop-blur-sm">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-mono text-xs font-medium text-neutral-400">June 2025</span>
+          <span class="rounded-full bg-black/5 px-3 py-1 font-mono text-xs text-neutral-600">v1.0.0</span>
+        </div>
+        <h2 class="text-xl font-medium text-black mb-2">Initial Release</h2>
+        <ul class="list-disc pl-6 space-y-1.5 text-sm text-neutral-600">
+          <li>Initial Webflow template supply release</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</PageLayout>

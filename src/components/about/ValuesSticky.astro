@@ -1,0 +1,55 @@
+---
+const values = [
+  {
+    number: '01',
+    title: 'We deliver quality',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.',
+    image: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/685040ce220191936843859e_Serene%20Introspection%20in%20the%20Sky.webp',
+  },
+  {
+    number: '02',
+    title: 'We craft experiences',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.',
+    image: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/685041aa9addc12d7f717a71_AI%20Shopping%20Bag%20on%20Turf.webp',
+  },
+  {
+    number: '03',
+    title: 'We build partnerships',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.',
+    image: 'https://cdn.prod.website-files.com/684a11845c7dd0b4b7745cd9/6850427e42110e1c041a7ec8_Industrial%20Canister%20Mosaic.webp',
+  },
+];
+---
+
+<section class="py-24 border-t border-black/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="space-y-16">
+      {values.map((val) => (
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center rounded-3xl border border-black/10 bg-white/50 p-6 sm:p-10 backdrop-blur-sm">
+          {/* Visual Container */}
+          <div class="md:col-span-6 h-72 sm:h-96 rounded-2xl overflow-hidden bg-neutral-100">
+            <img
+              src={val.image}
+              alt={val.title}
+              class="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Text Content */}
+          <div class="md:col-span-6 md:pl-6 space-y-4">
+            <span class="font-mono text-xs font-medium uppercase tracking-wider text-neutral-400">
+              {val.number}
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-medium tracking-tight text-black">
+              {val.title}
+            </h3>
+            <p class="text-sm sm:text-base text-neutral-600 leading-relaxed max-w-lg">
+              {val.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
